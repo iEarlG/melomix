@@ -28,13 +28,13 @@ const Header: React.FC<HeaderProps> = ({
             <div className="w-full flex items-center justify-between mb-4">
                 <div className="hidden md:flex items-center gap-x-2">
                     <button 
-                        className="flex items-center justify-center rounded-full hover:opacity-75 bg-[#030303] transition"
+                        className="flex items-center justify-center rounded-full hover:opacity-75 bg-[#000000b3] transition"
                         onClick={() => router.back()}
                     >
                         <BiChevronLeft size={28} className="text-white" />
                     </button>
                     <button 
-                        className="flex items-center justify-center rounded-full hover:opacity-75 bg-[#030303] transition"
+                        className="flex items-center justify-center rounded-full hover:opacity-75 bg-[#000000b3] transition"
                         onClick={() => router.forward()}
                     >
                         <BiChevronRight size={28} className="text-white" />
