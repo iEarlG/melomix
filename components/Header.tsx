@@ -6,6 +6,8 @@ import { twMerge } from "tailwind-merge";
 import { BiChevronLeft, BiChevronRight, BiSearchAlt } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 
+import Button from "./Button";
+
 interface HeaderProps {
     children: React.ReactNode;
     className?: string;
@@ -39,20 +41,41 @@ const Header: React.FC<HeaderProps> = ({
                     </button>
                 </div>
                 <div className="flex items-center md:hidden gap-x-2">
-                <button 
-                        className="flex items-center justify-center rounded-full p-2 bg-white hover:opacity-75 transition"
-                        onClick={() => {}}
-                    >
-                        <AiOutlineHome size={20} className="text-[#030303]" />
+                    <button 
+                            className="flex items-center justify-center rounded-full p-2 bg-white hover:opacity-75 transition"
+                            onClick={() => {}}
+                        >
+                            <AiOutlineHome size={20} className="text-[#030303]" />
+                        </button>
+                    <button 
+                            className="flex items-center justify-center rounded-full p-2 bg-white hover:opacity-75 transition"
+                            onClick={() => {}}
+                        >
+                            <BiSearchAlt size={20} className="text-[#030303]" />
                     </button>
-                <button 
-                        className="flex items-center justify-center rounded-full p-2 bg-white hover:opacity-75 transition"
-                        onClick={() => {}}
-                    >
-                        <BiSearchAlt size={20} className="text-[#030303]" />
-                </button>
+                </div>
+                <div className="flex justify-between items-center gap-x-4">
+                    <>
+                        <div>
+                            <Button
+                                className="bg-transparent text-neutral-300 font-medium"
+                                onClick={() => {}}
+                            >
+                                Sign up
+                            </Button>
+                        </div>
+                        <div>
+                            <Button
+                                className="bg-white px-6 py-2"
+                                onClick={() => {}}
+                            >
+                                Login
+                            </Button>
+                        </div>
+                    </>
                 </div>
             </div>
+            {children}
         </div>
     );
 }
