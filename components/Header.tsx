@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import { BiChevronLeft, BiChevronRight, BiSearchAlt } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 
+import useAuthModal from "@/hooks/useAuthModal";
 import Button from "./Button";
 
 interface HeaderProps {
@@ -18,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({
     className
 }) => {
     const router = useRouter();
+    const authModal = useAuthModal();
     
     const handleLogOut = () => {
 
@@ -59,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({
                         <div>
                             <Button
                                 className="bg-transparent text-neutral-300 font-medium"
-                                onClick={() => {}}
+                                onClick={authModal.onOpen}
                             >
                                 Sign up
                             </Button>
@@ -67,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
                         <div>
                             <Button
                                 className="bg-white px-6 py-2"
-                                onClick={() => {}}
+                                onClick={authModal.onOpen}
                             >
                                 Login
                             </Button>
